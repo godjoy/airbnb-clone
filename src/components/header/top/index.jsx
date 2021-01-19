@@ -4,28 +4,9 @@ import Categories from './Categories';
 import Right from './Right';
 
 class Top extends React.Component {
-    /**
-     * category: 0-숙소 1-체험 2-온라인 체험
-     */
-    state = {
-        category: 0,
-    }
-    
-    handleRoomsClick = () => {
-        console.log('숙소 클릭');
-        this.setState({
-            category: 0,
-        })
-    };
-
-    handleExperienceClick = () => {
-        console.log('체험 클릭');
-        this.setState({
-            category: 1,
-        })
-    };
-
     render() {
+        const { handleRoomsClick, handleExperienceClick } = this.props
+
         return (
             <TopContainer>
                 <Home>
@@ -36,9 +17,8 @@ class Top extends React.Component {
                     </HomeLogo>
                 </Home>
                 <Categories 
-                    handleRoomsClick={this.handleRoomsClick} 
-                    handleExperienceClick={this.handleExperienceClick}
-                />
+                    handleRoomsClick={ handleRoomsClick } 
+                    handleExperienceClick={ handleExperienceClick }/>
                 <Right />
             </TopContainer>
         )

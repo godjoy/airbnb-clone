@@ -4,11 +4,31 @@ import Top from './top';
 import Search from './search'
 
 class Header extends React.Component {
+    state = {
+        category: 'rooms',
+    }
+    
+    handleRoomsClick = () => {
+        console.log('숙소 클릭');
+        this.setState({
+            category: 'rooms',
+        })
+    };
+
+    handleExperienceClick = () => {
+        console.log('체험 클릭');
+        this.setState({
+            category: 'experience',
+        })
+    };
+
     render() {
         return (
             <HeaderContainer>
-                <Top />
-                <Search />
+                <Top                     
+                    handleRoomsClick={ this.handleRoomsClick } 
+                    handleExperienceClick={ this.handleExperienceClick }/>
+                <Search category={ this.state.category }/>
                 <Title>이제, 여행은<br/>가까운 곳에서</Title>
                 <SearchNearby>근처의 숙소 둘러보기</SearchNearby>
             </HeaderContainer>

@@ -32,16 +32,3 @@ const Category = styled.div`
         color: #d4dce1;
     }     
 `;
-
-// const Underline = styled.div`
-//     width: 0px
-//     height: 2px;
-//     background-color: white;
-//     text-decoration: none;
-//     display: inline-block;
-//     position: relative;
-
-//     &:hover {
-//         width: 5px;
-//     }
-// `;
